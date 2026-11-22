@@ -1,0 +1,5 @@
+# dsh-plugin-gate bundle patch: one host-side plugin row.
+- insert:
+    - id: plugin-gate
+      name: dsh-plugin-gate
+      config: {}
