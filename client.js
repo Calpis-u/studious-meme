@@ -192,7 +192,9 @@ window.__ModuleLoader__.load({
               : null,
           )
         }),
-        h('div', { className: 'pg-sec' }, '本会话工具用量'),
+        h('div', { className: 'pg-sec' }, '最近活跃会话的工具用量'),
+        h('div', { className: 'pg-dim', style: { fontSize: 11, marginBottom: 4 } },
+          data.sessionId ? `会话 ${String(data.sessionId).slice(0, 8)} · 按调用次数排序` : '暂无'),
         data.tools.length
           ? data.tools.map((t) => h('div', { className: 'pg-tool', key: t.name }, h('span', null, t.name), h('span', { className: 'pg-dim' }, `× ${t.count}`)))
           : h('div', { className: 'pg-empty' }, '当前还没有工具调用记录。'),
